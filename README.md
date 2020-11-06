@@ -10,3 +10,8 @@ Sometimes when you try to use tensorboard to visualize something, you don't have
 ```bash
 export TMPDIR=/tmp/$USER; mkdir -p $TMPDIR; tensorboard --logdir $LOGDIR
 ```
+
+## Get the number of (trainable) parameters in PyTorch
+```python
+sum(p.numel() for p in model.parameters() if p.requires_grad)
+```
